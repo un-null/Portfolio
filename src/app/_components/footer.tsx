@@ -1,13 +1,13 @@
 export default function Footer() {
   return (
-    <footer className="text-mauvedark-11 mt-3 flex items-center justify-between p-6 pb-6 pt-3 text-center text-xs">
-      <div className="">
+    <footer className="text-gray-dim mt-3 flex items-center justify-between p-6 pb-6 pt-3 text-center text-xs">
+      <div>
         {`null (`}
         <a
           href="https://twitter.com/nu_____ll"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-mauvedark-12"
+          className="text-gray-normal"
         >
           @nu_____ll
         </a>
@@ -18,7 +18,7 @@ export default function Footer() {
           href=""
           target="_blank"
           rel="noopener noreferrer"
-          className="text-mauvedark-12"
+          className="text-gray-normal"
         >
           xxx
         </a>
