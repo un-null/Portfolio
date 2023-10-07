@@ -13,6 +13,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-radix-colors")],
 };
 export default config;
