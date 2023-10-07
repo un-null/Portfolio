@@ -8,7 +8,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      layoute: {
+      gridTemplateRows: {
         layout: "auto 1fr auto",
       },
     },
