@@ -7,57 +7,14 @@ import {
   TableRow,
 } from "@tremor/react";
 
-export default function Home() {
-  const data = [
-    {
-      date: "2023",
-      title: "Project A",
-      stack: "1, 2, 3, 4, 5",
-      repo: "A",
-    },
-    {
-      date: "2023",
-      title: "Project B",
-      stack: "1, 2, 3,",
-      repo: "B",
-    },
-    {
-      date: "2023",
-      title: "Project C",
-      stack: "1, 2",
-      repo: "C",
-    },
-    {
-      date: "2023",
-      title: "Project D",
-      stack: "1, 2, 3, 4",
-      repo: "D",
-    },
-    {
-      date: "2023",
-      title: "Project E",
-      stack: "1, 2",
-      repo: "E",
-    },
-    {
-      date: "2023",
-      title: "Project F",
-      stack: "1, 2, 3, 4",
-      repo: "F",
-    },
-    {
-      date: "2023",
-      title: "Project G",
-      stack: "1, 2, 3, 4, 5",
-      repo: "G",
-    },
-  ];
+import { getAllWorks } from "@/utils/notion";
+
+export default async function Home() {
+  const { result } = await getAllWorks();
 
   return (
     <div>
-      <h1 className="text-graya-normal mt-5 text-lg">Tabs</h1>
-
-      <div className="mt-5 w-full max-w-screen-sm">
+      <div className="mt-5 w-full  sm:max-w-screen-sm">
         <Table className="mt-5">
           <TableHead className="border-gray-dim border-b">
             <TableRow className="text-graya-dim text-xs">
@@ -76,14 +33,38 @@ export default function Home() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {data.map((item) => (
-              <TableRow key={item.title} className="border-gray-dim text-sm">
+            {result.map((item: any) => (
+              <TableRow key={item.id} className="border-gray-dim text-sm">
                 <TableCell className="text-gray-dim w-0 p-0 pr-4">
-                  {item.date}
+                  {item.properties["Date"]["date"]?.["start"].substr(0, 4)}
                 </TableCell>
-                <TableCell className="p-0">{item.title}</TableCell>
-                <TableCell className="w-0 p-0 pr-4">{item.stack}</TableCell>
-                <TableCell className="text-gray-dim w-0">{item.repo}</TableCell>
+                <TableCell className="p-0 pr-4">
+                  {item.public_url ? (
+                    <a
+                      href={item.public_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.properties["Name"]["title"].map(
+                        (c: any) => c.plain_text,
+                      )}
+                    </a>
+                  ) : (
+                    <p>
+                      {item.properties["Name"]["title"].map(
+                        (c: any) => c.plain_text,
+                      )}
+                    </p>
+                  )}
+                </TableCell>
+                <TableCell className="w-0 p-0">
+                  <ul>
+                    {item.properties["Languages"]["multi_select"].map(
+                      (lang: any) => lang.name[0] + ", ",
+                    )}
+                  </ul>
+                </TableCell>
+                <TableCell className="text-gray-dim w-0">-</TableCell>
               </TableRow>
             ))}
           </TableBody>
