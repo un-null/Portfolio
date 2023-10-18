@@ -7,6 +7,7 @@ import {
   TableRow,
 } from "@tremor/react";
 
+import Icon from "@/components/icons/icon";
 import { getAllWorks } from "@/utils/notion";
 
 export default async function Home() {
@@ -58,13 +59,21 @@ export default async function Home() {
                   )}
                 </TableCell>
                 <TableCell className="w-0 p-0">
-                  <ul>
+                  <ul className="flex space-x-2">
                     {item.properties["Languages"]["multi_select"].map(
-                      (lang: any) => lang.name[0] + ", ",
+                      (lang: any) => (
+                        <li>
+                          <span>
+                            <Icon type={lang.name} />
+                          </span>
+                        </li>
+                      ),
                     )}
                   </ul>
                 </TableCell>
-                <TableCell className="text-gray-dim w-0">-</TableCell>
+                <TableCell className="text-gray-dim w-0">
+                  <Icon type="Github" />
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
