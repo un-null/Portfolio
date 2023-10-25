@@ -1,11 +1,12 @@
 type Icon = {
   size?: number;
+  href: string;
 };
 
-export default function ActionIcon({ size = 20 }: Icon) {
+export default function ActionIcon({ size = 20, href }: Icon) {
   return (
     <a
-      href=""
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className="block cursor-pointer rounded-sm p-1 hover:text-gray-normal hover:bg-graya-action"

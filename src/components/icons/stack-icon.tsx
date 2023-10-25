@@ -1,9 +1,9 @@
-type LangIconProps = {
-  type: "Next" | "Notion" | "Tailwind";
+type StackIconProps = {
+  type: "Next" | "Notion" | "Tailwind" | "Mantine";
   size?: number;
 };
 
-export default function LangIcon({ type, size = 20 }: LangIconProps) {
+export default function StackIcon({ type, size = 20 }: StackIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -43,6 +43,18 @@ export default function LangIcon({ type, size = 20 }: LangIconProps) {
           strokeWidth={2}
           d="M11.667 6C9.177 6 7.623 7.222 7 9.667c.933-1.223 2.023-1.68 3.267-1.375c.71.174 1.217.68 1.778 1.24c.916.912 2 1.968 4.288 1.968c2.49 0 4.044-1.222 4.667-3.667c-.933 1.223-2.023 1.68-3.267 1.375c-.71-.174-1.217-.68-1.778-1.24C15.039 7.056 13.98 6 11.667 6zm-4 6.5c-2.49 0-4.044 1.222-4.667 3.667c.933-1.223 2.023-1.68 3.267-1.375c.71.174 1.217.68 1.778 1.24c.916.912 1.975 1.968 4.288 1.968c2.49 0 4.044-1.222 4.667-3.667c-.933 1.223-2.023 1.68-3.267 1.375c-.71-.174-1.217-.68-1.778-1.24c-.916-.912-1.975-1.968-4.288-1.968z"
         />
+      )}
+      {type === "Mantine" && (
+        <g
+          fill="none"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+        >
+          <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0" />
+          <path d="M11 16a4.97 4.97 0 0 0 2-4a5.01 5.01 0 0 0-2-4m3 1h-2m2 6h-2m-2-3h.01" />
+        </g>
       )}
     </svg>
   );

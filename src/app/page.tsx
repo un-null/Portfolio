@@ -8,7 +8,7 @@ import {
 } from "@tremor/react";
 
 import ActionIcon from "@/components/icons/action-icon";
-import LangIcon from "@/components/icons/lang-icon";
+import StackIcon from "@/components/icons/stack-icon";
 import { getAllWorks } from "@/utils/notion";
 
 export default async function Home() {
@@ -65,7 +65,7 @@ export default async function Home() {
                       (lang: any) => (
                         <li key={lang.name}>
                           <span>
-                            <LangIcon type={lang.name} />
+                            <StackIcon type={lang.name} />
                           </span>
                         </li>
                       ),
@@ -73,7 +73,7 @@ export default async function Home() {
                   </ul>
                 </TableCell>
                 <TableCell className="text-gray-dim w-0">
-                  <ActionIcon />
+                  <ActionIcon href={item.properties["Github"]["url"]} />
                 </TableCell>
               </TableRow>
             ))}
