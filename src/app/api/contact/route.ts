@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { Form } from "@/app/contact/page";
+import { Form } from "@/components/form";
 import { notion } from "@/utils/notion";
 
 export async function POST(req: Request) {
@@ -54,6 +54,4 @@ export async function POST(req: Request) {
   } catch {
     return NextResponse.json({ message: "Error" }, { status: 500 });
   }
-
-  return NextResponse.json({ message: "Success" }, { status: 200 });
 }

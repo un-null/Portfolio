@@ -1,9 +1,9 @@
-type Icon = {
-  type: "Next" | "Notion" | "Tailwind";
+type IconProps = {
+  type: "Home" | "X";
   size?: number;
 };
 
-export default function Icon({ type, size = 20 }: Icon) {
+export default function Icon({ type, size = 20 }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,37 +11,16 @@ export default function Icon({ type, size = 20 }: Icon) {
       height={size}
       viewBox="0 0 24 24"
     >
-      {type === "Next" && (
+      {type === "Home" && (
         <path
-          fill="none"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M9 15V9l7.745 10.65A9 9 0 1 1 19 17.657M15 12V9"
+          fill="currentColor"
+          d="M11 13q.425 0 .713-.288T12 12q0-.425-.288-.713T11 11q-.425 0-.713.288T10 12q0 .425.288.713T11 13Zm-4 8v-2l6-1V6.875q0-.375-.225-.675t-.575-.35L7 5V3l5.5.9q1.1.2 1.8 1.025T15 6.85v12.8L7 21Zm-4 0v-2h2V5q0-.85.588-1.425T7 3h10q.85 0 1.425.575T19 5v14h2v2H3Zm4-2h10V5H7v14Z"
         />
       )}
-      {type === "Notion" && (
-        <g
-          fill="none"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-        >
-          <path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" />
-          <path d="M7 7h3l6 6M8 7v10m-1 0h2m6-10h2" />
-          <path d="M16 7v10h-1l-7-7" />
-        </g>
-      )}
-      {type === "Tailwind" && (
+      {type === "X" && (
         <path
-          fill="none"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M11.667 6C9.177 6 7.623 7.222 7 9.667c.933-1.223 2.023-1.68 3.267-1.375c.71.174 1.217.68 1.778 1.24c.916.912 2 1.968 4.288 1.968c2.49 0 4.044-1.222 4.667-3.667c-.933 1.223-2.023 1.68-3.267 1.375c-.71-.174-1.217-.68-1.778-1.24C15.039 7.056 13.98 6 11.667 6zm-4 6.5c-2.49 0-4.044 1.222-4.667 3.667c.933-1.223 2.023-1.68 3.267-1.375c.71.174 1.217.68 1.778 1.24c.916.912 1.975 1.968 4.288 1.968c2.49 0 4.044-1.222 4.667-3.667c-.933 1.223-2.023 1.68-3.267 1.375c-.71-.174-1.217-.68-1.778-1.24c-.916-.912-1.975-1.968-4.288-1.968z"
+          fill="currentColor"
+          d="M389.2 48h70.6L305.6 224.2L487 464H345L233.7 318.6L106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z"
         />
       )}
     </svg>
