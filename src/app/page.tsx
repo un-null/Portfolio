@@ -17,7 +17,7 @@ export default async function Home() {
   return (
     <div>
       <div className="mt-5 w-full  sm:max-w-screen-sm">
-        <Table className="mt-5">
+        <Table className="mt-5 cursor-default">
           <TableHead className="border-gray-dim border-b">
             <TableRow className="text-graya-dim text-xs">
               <TableHeaderCell className="p-0 pb-2 font-thin">
