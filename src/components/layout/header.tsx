@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import Icon from "../icons/icon";
+
 export default async function Header() {
   return (
     <header className="mb-5 flex items-center md:mb-10">
@@ -19,7 +21,9 @@ export default async function Header() {
           rel="noopener noreferrer"
           className="hover:text-graya-normal"
         >
-          Follow me
+          <span>
+            <Icon type="X" size={16} />
+          </span>
         </a>
       </nav>
     </header>

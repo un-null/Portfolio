@@ -8,7 +8,7 @@ import {
 } from "@tremor/react";
 
 import ActionIcon from "@/components/icons/action-icon";
-import Icon from "@/components/icons/icon";
+import LangIcon from "@/components/icons/lang-icon";
 import { getAllWorks } from "@/utils/notion";
 
 export default async function Home() {
@@ -17,7 +17,7 @@ export default async function Home() {
   return (
     <div>
       <div className="mt-5 w-full  sm:max-w-screen-sm">
-        <Table className="mt-5">
+        <Table className="mt-5 cursor-default">
           <TableHead className="border-gray-dim border-b">
             <TableRow className="text-graya-dim text-xs">
               <TableHeaderCell className="p-0 pb-2 font-thin">
@@ -65,7 +65,7 @@ export default async function Home() {
                       (lang: any) => (
                         <li key={lang.name}>
                           <span>
-                            <Icon type={lang.name} />
+                            <LangIcon type={lang.name} />
                           </span>
                         </li>
                       ),

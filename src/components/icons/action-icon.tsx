@@ -8,7 +8,7 @@ export default function ActionIcon({ size = 20 }: Icon) {
       href=""
       target="_blank"
       rel="noopener noreferrer"
-      className="block cursor-pointer rounded-sm p-1 hover:bg-graya-action"
+      className="block cursor-pointer rounded-sm p-1 hover:text-gray-normal hover:bg-graya-action"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
