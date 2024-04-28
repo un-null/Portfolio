@@ -1,5 +1,5 @@
 type StackIconProps = {
-  type: "Next" | "Notion" | "Tailwind" | "Mantine" | "Astro" | "Panda";
+  type: string;
   size?: number;
 };
 

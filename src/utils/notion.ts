@@ -11,7 +11,7 @@ export const notion = new Client({
 });
 
 export const getAllWorks = async () => {
-  const data = await notion.databases.query({
+  const res = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_ID_WORKS,
     sorts: [
       {
@@ -21,8 +21,33 @@ export const getAllWorks = async () => {
     ],
   });
 
+  const data = res.results.map((d) => {
+    if (d.object === "page" && "properties" in d) {
+      const id = d.id;
+      const public_url = d.public_url;
+
+      const title =
+        d.properties["Name"].type === "title"
+          ? d.properties["Name"].title.map((title) => title.plain_text)
+          : [];
+
+      const date =
+        d.properties["Date"].type === "date"
+          ? d.properties["Date"].date?.start.substring(0, 4)
+          : "";
+
+      const github_url =
+        d.properties["Github"].type === "url" ? d.properties["Github"].url : "";
+      const langs =
+        d.properties["Languages"].type === "multi_select"
+          ? d.properties["Languages"].multi_select
+          : [];
+      return { id, public_url, title, date, github_url, langs };
+    } else [];
+  });
+
   return {
-    result: data.results,
+    result: data,
   };
 };
 
