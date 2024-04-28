@@ -35,45 +35,37 @@ export default async function Home() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {result.map((item: any) => (
-              <TableRow key={item.id} className="border-gray-dim text-sm">
+            {result.map((item) => (
+              <TableRow key={item?.id} className="border-gray-dim text-sm">
                 <TableCell className="text-gray-dim w-0 p-0 pr-4">
-                  {item.properties["Date"]["date"]?.["start"].substr(0, 4)}
+                  {item?.date}
                 </TableCell>
                 <TableCell className="p-0 pr-4">
-                  {item.public_url ? (
+                  {item?.public_url ? (
                     <a
                       href={item.public_url}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {item.properties["Name"]["title"].map(
-                        (c: any) => c.plain_text,
-                      )}
+                      {item?.title}
                     </a>
                   ) : (
-                    <p>
-                      {item.properties["Name"]["title"].map(
-                        (c: any) => c.plain_text,
-                      )}
-                    </p>
+                    <p>{item?.title}</p>
                   )}
                 </TableCell>
                 <TableCell className="w-0 p-0">
                   <ul className="flex space-x-2">
-                    {item.properties["Languages"]["multi_select"].map(
-                      (lang: any) => (
-                        <li key={lang.name}>
-                          <span>
-                            <StackIcon type={lang.name} />
-                          </span>
-                        </li>
-                      ),
-                    )}
+                    {item?.langs.map((lang) => (
+                      <li key={lang.name}>
+                        <span>
+                          <StackIcon type={lang.name} />
+                        </span>
+                      </li>
+                    ))}
                   </ul>
                 </TableCell>
                 <TableCell className="text-gray-dim w-0">
-                  <ActionIcon href={item.properties["Github"]["url"]} />
+                  <ActionIcon href={item?.github_url ? item.github_url : ""} />
                 </TableCell>
               </TableRow>
             ))}

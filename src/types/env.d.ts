@@ -3,6 +3,8 @@ declare namespace NodeJS {
     readonly NOTION_TOKEN: string;
     readonly NOTION_DATABASE_ID_WORKS: string;
     readonly NOTION_DATABASE_ID_FORM: string;
+    readonly NOTION_DATABASE_ID_BLOG: string;
+
     readonly NEXT_PUBLIC_HOSTNAME: string;
   }
 }
