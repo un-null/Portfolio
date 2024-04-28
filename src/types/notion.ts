@@ -30,3 +30,15 @@ export type PageType = {
   url: string;
   properties: PropertyType;
 };
+
+export type SelectColor =
+  | "default"
+  | "gray"
+  | "brown"
+  | "orange"
+  | "yellow"
+  | "green"
+  | "blue"
+  | "purple"
+  | "pink"
+  | "red";

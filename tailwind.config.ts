@@ -10,6 +10,10 @@ const config: Config = {
       gridTemplateRows: {
         layout: "auto 1fr auto",
       },
+      backgroundColor: {
+        "notion-blue": "#0078DF",
+        "notion-gray": "#9B9A97",
+      },
     },
   },
   plugins: [require("tailwindcss-radix-colors")],
