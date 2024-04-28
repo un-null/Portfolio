@@ -18,7 +18,7 @@ export const Tab = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="text-gray-dim mb-4 flex gap-4">
+    <div className="text-gray-dim mb-4 flex gap-4">
       {navItems.map((item) => (
         <Link
           href={item.href}
@@ -31,6 +31,6 @@ export const Tab = () => {
           {item.label}
         </Link>
       ))}
-    </nav>
+    </div>
   );
 };
