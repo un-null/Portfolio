@@ -11,7 +11,7 @@ export default async function Header() {
       >
         null
       </Link>
-      <nav className="text-gray-dim flex items-center justify-end gap-1 text-xs md:gap-3">
+      <nav className="text-gray-dim flex items-center justify-end gap-4 text-xs md:gap-3">
         <Link href="/blog" className="hover:text-graya-normal">
           Blog
         </Link>
