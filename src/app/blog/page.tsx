@@ -2,20 +2,10 @@ import Link from "next/link";
 
 import { Card } from "@tremor/react";
 
-import { SelectColor } from "@/types/notion";
-import { getAllBlogs } from "@/utils/notion";
+import { getAllBlogs, tagColor } from "@/utils/notion";
 
-export default async function Blog() {
+export default async function NotionBlog() {
   const { data } = await getAllBlogs();
-
-  const tagColor = (color: SelectColor) => {
-    switch (color) {
-      case (color = "blue"):
-        return "bg-notion-blue/50";
-      case (color = "default"):
-        return "bg-notion-gray/40";
-    }
-  };
 
   return (
     <ul className="mx-auto grid h-fit grid-cols-1 gap-4 font-thin md:grid-cols-2">

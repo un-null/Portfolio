@@ -1,6 +1,8 @@
 import { Client } from "@notionhq/client";
 import { QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints";
 
+import { SelectColor } from "@/types/notion";
+
 export const notion = new Client({
   auth: process.env.NOTION_TOKEN,
 });
@@ -57,4 +59,13 @@ export const getAllBlogs = async () => {
   return {
     data: data ? data : [],
   };
+};
+
+export const tagColor = (color: SelectColor) => {
+  switch (color) {
+    case (color = "blue"):
+      return "bg-notion-blue/50";
+    case (color = "default"):
+      return "bg-notion-gray/40";
+  }
 };
