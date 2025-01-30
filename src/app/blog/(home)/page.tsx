@@ -11,8 +11,8 @@ export default async function NotionBlog() {
     <ul className="mx-auto grid h-fit grid-cols-1 gap-4 font-thin md:grid-cols-2">
       {data.map((d) => (
         <Link href={`/blog/${d?.id}`} key={d?.id}>
-          <Card className="text-gray-dim flex h-48 max-w-md flex-col gap-2 rounded-sm ring-graydark-11 hover:text-graya-normal">
-            <p className="text-graya-normal text-lg font-bold">{d?.title}</p>
+          <Card className="flex h-48 max-w-md flex-col gap-2 rounded-sm border ring-[#EDEDED] hover:text-[#EEEEEE]">
+            <p className="text-[#EEEEEE] text-lg font-bold">{d?.title}</p>
             <p className="line-clamp-2 text-clip text-sm font-thin md:line-clamp-3">
               {d?.summary}
             </p>
@@ -23,7 +23,7 @@ export default async function NotionBlog() {
                   key={tag.id}
                   className={`${tagColor(
                     tag.color,
-                  )} text-graya-normal rounded-sm px-1`}
+                  )} text-[#EEEEEE] rounded-sm px-1`}
                 >
                   {tag.name}
                 </span>

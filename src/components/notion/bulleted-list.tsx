@@ -8,7 +8,7 @@ export const BulletedList = ({
   block: BulletedListItemBlockObjectResponse;
 }) => {
   return (
-    <li className="list-inside list-disc marker:text-graydark-12">
+    <li className="list-inside list-disc marker:text-[#EEEEEE]">
       <RichText text={block.bulleted_list_item.rich_text} />
     </li>
   );

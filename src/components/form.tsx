@@ -49,7 +49,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full text-[#EEEEEE]">
       {isSubmitSuccessful ? (
         <div className="text-center">
           <p>
@@ -61,7 +61,7 @@ export default function ContactForm() {
           </p>
           <Link
             href="/"
-            className="text-graya-dim flex flex-col hover:text-graya-normal"
+            className="flex flex-col hover:text-[#EEEEEE]"
           >
             <div className="mt-10 grid place-items-center">
               <Icon type="Home" size={40} />
@@ -75,46 +75,46 @@ export default function ContactForm() {
           className="mx-auto mt-10 flex w-full max-w-md flex-col space-y-4"
         >
           <label htmlFor="name">
-            <span className="text-gray-normal text-sm font-thin">name</span>
+            <span className="text-sm font-thin">name</span>
             <input
               type="text"
               id="name"
               placeholder="your name"
               {...register("name")}
-              className="bg-gray-ui mt-1 w-full rounded p-2 text-sm accent-graydarka-12 outline-none placeholder:text-sm"
+              className="bg-[#232323] mt-1 w-full rounded p-2 text-sm accent-[#191919] outline-none placeholder:text-sm"
             />
             {errors.name && (
-              <span className="text-sm text-red-10">{errors.name.message}</span>
+              <span className="text-sm text-[#EC5D5E]">{errors.name.message}</span>
             )}
           </label>
 
           <label htmlFor="email">
-            <span className="text-gray-normal text-sm font-thin">mail</span>
+            <span className="text-sm font-thin">mail</span>
             <input
               type="email"
               id="email"
               placeholder="your email"
               {...register("email")}
-              className="bg-gray-ui mt-1 w-full rounded p-2 text-sm accent-graydarka-12 outline-none placeholder:text-sm"
+              className="bg-[#232323] mt-1 w-full rounded p-2 text-sm accent-[#191919] outline-none placeholder:text-sm"
             />
             {errors.email && (
-              <span className="text-sm text-red-10">
+              <span className="text-sm text-[#EC5D5E]">
                 {errors.email.message}
               </span>
             )}
           </label>
 
           <label htmlFor="message">
-            <span className="text-gray-normal text-sm font-thin">message</span>
+            <span className="text-sm font-thin">message</span>
             <textarea
               id="message"
               placeholder="your message"
               rows={4}
               {...register("message")}
-              className="bg-gray-ui max-h-[4lh] w-full resize-none rounded p-2 text-sm outline-none placeholder:text-sm"
+              className="bg-[#232323] max-h-[4lh] w-full resize-none rounded p-2 text-sm outline-none placeholder:text-sm"
             />
             {errors.message && (
-              <span className=" text-sm text-red-10">
+              <span className=" text-sm text-[#EC5D5E]">
                 {errors.message.message}
               </span>
             )}
@@ -122,7 +122,7 @@ export default function ContactForm() {
 
           <button
             type="submit"
-            className="mx-auto block w-fit rounded border bg-graydark-12 px-10 py-2 text-gray-12 disabled:bg-gray-11"
+            className="mx-auto block w-fit rounded border bg-[#EDEDED] px-10 py-2 text-[#111111] disabled:bg-[#6F6F6F] disabled:cursor-not-allowed cursor-pointer"
             disabled={!isDirty || !isValid || isSubmitting}
           >
             {isSubmitting ? (

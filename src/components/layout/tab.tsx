@@ -18,13 +18,14 @@ export const Tab = () => {
   const pathname = usePathname();
 
   return (
-    <div className="text-gray-dim mb-4 flex gap-4">
+    <div className="mb-4 flex gap-4">
       {navItems.map((item) => (
         <Link
           href={item.href}
+          key={item.href}
           className={`pb-1 ${
             item.href === pathname
-              ? "border-b-graya-normal text-graya-normal border-b"
+              ? "border-[#EEEEEE] text-[#EEEEEE] border-b"
               : ""
           }`}
         >
