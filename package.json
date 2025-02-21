@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
+    "@radix-ui/react-slot": "^1.1.2",
     "@tremor/react": "^3.9.2",
     "@typescript-eslint/parser": "8",
     "clsx": "^2.1.1",
