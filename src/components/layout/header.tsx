@@ -7,13 +7,16 @@ export default function Header() {
     <header className="mb-5 flex items-center md:mb-10">
       <Link
         href="/"
-        className="text-[#EEEEEE] mr-auto flex-1 text-lg font-bold"
+        className="mr-auto flex-1 text-lg font-bold text-[#EEEEEE]"
       >
         null
       </Link>
       <nav className="flex items-center justify-end gap-4 text-xs md:gap-3">
         <Link href="/blog" className="hover:text-[#EEEEEE]">
           Blog
+        </Link>
+        <Link href="/roadmap" className="hover:text-[#EEEEEE]">
+          Roadmap
         </Link>
         <Link href="/contact" className="hover:text-[#EEEEEE]">
           Contact
