@@ -1,3 +1,4 @@
+"use client";
 type StackIconProps = {
   type: string;
   size?: number;
@@ -22,8 +23,8 @@ export default function StackIcon({ type, size = 20 }: StackIconProps) {
       ) : (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width={type === "Astro" ? 16 : size}
-          height={type === "Astro" ? 16 : size}
+          width={size}
+          height={size}
           viewBox="0 0 24 24"
         >
           {type === "Next" && (

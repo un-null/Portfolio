@@ -18,8 +18,8 @@ export default async function Home() {
     <div>
       <div className="mt-5 w-full  sm:max-w-screen-sm">
         <Table className="mt-5 cursor-default">
-          <TableHead className="border-gray-dim border-b">
-            <TableRow className="text-graya-dim text-xs">
+          <TableHead className="border-b border-[#3A3A3A]">
+            <TableRow className="text-left text-xs">
               <TableHeaderCell className="p-0 pb-2 font-thin">
                 date
               </TableHeaderCell>
@@ -36,11 +36,9 @@ export default async function Home() {
           </TableHead>
           <TableBody>
             {result.map((item) => (
-              <TableRow key={item?.id} className="border-gray-dim text-sm">
-                <TableCell className="text-gray-dim w-0 p-0 pr-4">
-                  {item?.date}
-                </TableCell>
-                <TableCell className="p-0 pr-4">
+              <TableRow key={item?.id} className="border-[#3A3A3A] p-2 text-sm">
+                <TableCell className="w-0 p-0 pr-4">{item?.date}</TableCell>
+                <TableCell className="p-0 pr-4 text-[#EEEEEE]">
                   {item?.public_url ? (
                     <a
                       href={item.public_url}
@@ -54,7 +52,7 @@ export default async function Home() {
                   )}
                 </TableCell>
                 <TableCell className="w-0 p-0">
-                  <ul className="flex space-x-2">
+                  <ul className="flex space-x-2 text-[#EEEEEE]">
                     {item?.langs.map((lang) => (
                       <li key={lang.name}>
                         <span>
@@ -64,7 +62,7 @@ export default async function Home() {
                     ))}
                   </ul>
                 </TableCell>
-                <TableCell className="text-gray-dim w-0">
+                <TableCell className="w-0">
                   <ActionIcon href={item?.github_url ? item.github_url : ""} />
                 </TableCell>
               </TableRow>

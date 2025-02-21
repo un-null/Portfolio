@@ -2,7 +2,7 @@ import type { RichTextItemResponse } from "@notionhq/client/build/src/api-endpoi
 
 export const RichText = ({ text }: { text: RichTextItemResponse[] }) => {
   return (
-    <p className="inline whitespace-pre-wrap break-words leading-loose text-graydark-12/95">
+    <p className="inline whitespace-pre-wrap break-words leading-loose text-[#EEEEEE]">
       {text.length === 0 ? (
         <span className="block h-6" />
       ) : (
@@ -15,7 +15,7 @@ export const RichText = ({ text }: { text: RichTextItemResponse[] }) => {
                   href={textItem.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-dim underline underline-offset-1 hover:text-graya-normal"
+                  className="underline underline-offset-1 hover:text-[#EEEEEE]"
                 >
                   {textItem.plain_text}
                 </a>
