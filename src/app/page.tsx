@@ -18,8 +18,8 @@ export default async function Home() {
     <div>
       <div className="mt-5 w-full  sm:max-w-screen-sm">
         <Table className="mt-5 cursor-default">
-          <TableHead className="border-[#3A3A3A] border-b">
-            <TableRow className="text-xs">
+          <TableHead className="border-b border-[#3A3A3A]">
+            <TableRow className="text-left text-xs">
               <TableHeaderCell className="p-0 pb-2 font-thin">
                 date
               </TableHeaderCell>
@@ -36,10 +36,8 @@ export default async function Home() {
           </TableHead>
           <TableBody>
             {result.map((item) => (
-              <TableRow key={item?.id} className="border-[#3A3A3A] text-sm">
-                <TableCell className="w-0 p-0 pr-4">
-                  {item?.date}
-                </TableCell>
+              <TableRow key={item?.id} className="border-[#3A3A3A] p-2 text-sm">
+                <TableCell className="w-0 p-0 pr-4">{item?.date}</TableCell>
                 <TableCell className="p-0 pr-4 text-[#EEEEEE]">
                   {item?.public_url ? (
                     <a

@@ -102,8 +102,8 @@ export const getPageById = async (id: string) => {
 export const tagColor = (color: SelectColor) => {
   switch (color) {
     case (color = "blue"):
-      return "bg-notion-blue/50";
+      return "bg-[#364954]";
     case (color = "default"):
-      return "bg-notion-gray/40";
+      return "bg-[#454B4E]";
   }
 };
