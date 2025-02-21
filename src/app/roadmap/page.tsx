@@ -2,12 +2,16 @@ import Link from "next/link";
 
 import { Card } from "@tremor/react";
 
-export default function Roadmap() {
+import { getPublishedProject } from "@/utils/notion";
+
+export default async function Roadmap() {
+  const { result } = await getPublishedProject();
+
   return (
-    <div className="flex flex-col gap-8 overflow-x-hidden">
+    <div className="space-y-10 overflow-x-hidden">
       <section>
         <Card className="grid gap-4 rounded-sm border text-[#EEEEEE] ring-[#EDEDED]">
-          <h1 className="text-lg font-bold text-[#EEEEEE]">About</h1>
+          <h1 className="text-xl font-bold text-[#EEEEEE]">About</h1>
           <p className="text-sm font-thin leading-6">
             Here is my 2025 roadmap. You can review my tasks in review, in
             progress and completed.
@@ -28,35 +32,23 @@ export default function Roadmap() {
         </Card>
       </section>
 
-      <section className="flex flex-col gap-4">
-        <h1 className="text-lg font-bold text-[#EEEEEE]">Roadmap</h1>
+      <section className="mb-8 space-y-4 text-[#EEEEEE]">
+        <h1 className="text-xl font-bold">Roadmap</h1>
         <div className="-mx-4 overflow-x-auto px-4 pb-2">
           <div className="flex gap-4">
             {/* In Review Column */}
             <div className="flex min-w-[200px] flex-col">
               <h2 className="mb-4">In Review</h2>
               <div className="flex flex-col gap-4">
-                <Card className="rounded bg-gray-400">
-                  <p>#Label</p>
-                  <p>title</p>
-                </Card>
-                <Card className="rounded bg-gray-400">
-                  <p>#Label</p>
-                  <p>title</p>
-                </Card>
-                <Card className="rounded bg-gray-400">
-                  <p>#Label</p>
-                  <p>title</p>
-                </Card>
-                <Card className="rounded bg-gray-400">
-                  <p>#Label</p>
-                  <p>title</p>
-                </Card>
-                <Card className="rounded bg-gray-400">
-                  <p>#Label</p>
-                  <p>title</p>
-                </Card>
-                {/* Add more cards as needed */}
+                {result.in_review.map((item) => (
+                  <Card
+                    key={item?.id}
+                    className="space-y-3 rounded bg-[#F1F1EF]/40 p-4"
+                  >
+                    <p className="text-xs"># {item?.label.name}</p>
+                    <p className="text-sm font-bold">{item?.title.join(" ")}</p>
+                  </Card>
+                ))}
               </div>
             </div>
 
@@ -64,10 +56,15 @@ export default function Roadmap() {
             <div className="flex min-w-[200px] flex-col">
               <h2 className="mb-4">In progress</h2>
               <div className="flex flex-col gap-4">
-                <Card className="rounded bg-gray-400">
-                  <p>#Label</p>
-                  <p>title</p>
-                </Card>
+                {result.in_progress.map((item) => (
+                  <Card
+                    key={item?.id}
+                    className="space-y-3 rounded bg-[#529CCA]/40 p-4"
+                  >
+                    <p className="text-xs"># {item?.label.name}</p>
+                    <p className="text-sm font-bold">{item?.title.join(" ")}</p>
+                  </Card>
+                ))}
               </div>
             </div>
 
@@ -75,10 +72,15 @@ export default function Roadmap() {
             <div className="flex min-w-[200px] flex-col">
               <h2 className="mb-4">Completed</h2>
               <div className="flex flex-col gap-4">
-                <Card className="rounded bg-gray-400">
-                  <p>#Label</p>
-                  <p>title</p>
-                </Card>
+                {result.completed.map((item) => (
+                  <Card
+                    key={item?.id}
+                    className="space-y-3 rounded bg-[#4DAB9A]/40 p-4"
+                  >
+                    <p className="text-xs"># {item?.label.name}</p>
+                    <p className="text-sm font-bold">{item?.title.join(" ")}</p>
+                  </Card>
+                ))}
               </div>
             </div>
           </div>
